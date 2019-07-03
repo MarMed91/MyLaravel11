@@ -83,16 +83,11 @@ class SmartphoneController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SmartphoneRequest $request, $id)
     {
-      $valideData = $request->validate([
-        "brand" => "required",
-        "model" => "required",
-        "display" => "required|alpha_num",
-        "mem_ext" => "required|alpha_num"
-      ]);
+      $validatedData = $request->validated();
+      Smartphone::whereId($id)->update($validatedData);
 
-      Smartphone::whereId($id)->update($valideData);
       return redirect('str');
   }
 

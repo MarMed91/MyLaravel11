@@ -25,7 +25,7 @@ class SmartphoneRequest extends FormRequest
     {
         return [
 
-              "brand" => "required",
+              "brand" => "required", //VINCOLI DI INTEGRITà
               "model" => "required",
               "display" => "required|alpha_num",
               "mem_ext" => "required|alpha_num"

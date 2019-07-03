@@ -3,7 +3,7 @@
 @section('content')
   <h1>EDIT CAR</h1>
   <div class="edit">
-      <form method="post" action="{{ route('str.update', $smartphone->id) }}">
+      <form method="post" action="{{ route('str.update', $smartphone->id) }}"> //dobbiamo specificare la macchina da modificare
         @csrf
         @method ('PATCH')
         <div>
